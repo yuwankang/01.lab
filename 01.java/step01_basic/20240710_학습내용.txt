@@ -1,0 +1,16 @@
+학습내용
+
+1. 데이터 타입 종류
+2. 메소드 유연한 개발(구현, 호출)
+3. 생성자 학습
+4. 최적화된 다양한 개발 및 유지보수 고려한 패턴
+	1. builder pattern 지원 api
+		- lombok
+		
+	2. jUnit 단위 test api
+		- 실행을 위한 필수 메소드
+			public static void main(String [] args){}
+		- web인 경우 server는 필수
+			- url의 요청으로 개발 서비스 실행 요청 구조
+			- main() 불필요
+			

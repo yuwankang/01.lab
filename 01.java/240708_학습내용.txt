@@ -1,0 +1,18 @@
+1.실습 폴더 구조 동일하게 구성
+00. SW- sw 다운로드
+       01.jdk -openjdk17 https://jdk.java.net/archive/ 17 GA (build 17+35)
+            다운로드->압출풀기 
+            ->path등록 ->
+            정상 세팅확인 ->java -version
+       02.IDE -STS 
+                http://spring.io
+                - *.jar
+
+                - VSC
+                    - *.exe
+                    -install 버전 다운로드 설치
+       03.Linux
+       04.DB
+01. lab - 모든 실습 내용의 폴더
+02.devEnv-실행 프로그램들 위치
+2.설치 jdk-openjdk/sts/vsc virtualbox/ ubuntu 22.04(명령어로만 제어) mobaxterm

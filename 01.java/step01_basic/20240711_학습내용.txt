@@ -1,0 +1,46 @@
+학습 내용
+
+1. 최적화된 개발 구조
+	- 정형화된 구조
+	- 안정적, 유지보수 확장이 용이한 선호하는 구조
+	- 디자인 패턴
+
+2. 디자인 패턴
+	1. MVC
+		M : Model/핵심/biz/core
+		V : View/presentation
+		C : Controller
+	2. Builder 
+	3. SingleTon
+		- 객체 수를 강제적으로 서버에 한개만 유지할 수 있게 하는 기술
+	4. DAO[다오 or 디에이오]
+		- Data Access Object
+		- db연동 전담 클래스 		
+		- Table명DAO.java 권장
+	5. DTO
+		- Data Transfer Object
+		- 각 tier별 주고받는 데이터 구조
+			- Customer..
+		- Value Object[VO] 
+		- 개발 구조
+			멤버변수/기본생성자/생성자/setXxx/getXxx/toString()
+		- 클래스명 권장 규약
+			CustomerDTO.java / CustomerVO.java 
+			/ CustomerBean.java / Customer.java
+			
+			
+3. 학습 내용
+	- 배열
+	- 상속(재사용성), 다형성
+	- Collections Framework	
+		- Framework : 스펙에 맞게 개발 하는 구조들 의미
+		- library : 구조는 자유롭게 단 필요시에 함수(메소드)만 호출해서 사용
+	
+	
+	
+	
+	
+		
+		
+	
+	

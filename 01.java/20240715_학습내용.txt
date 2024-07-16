@@ -1,0 +1,14 @@
+message 자체는 미완성이라 객체 생성 불가능하다. 
+A a = new A();
+class A$1 implements A{
+
+}
+A$1 a  = new A$1();
+- ELk or ElasticStack
+Elasricsearch - db, 빠른검색 엔진
+Kinbana - Elasticserch의 사용 tool
+        - 데이터 시각화
+Logstach - 특정 위치에 데이터가 적재되면 자동 받아서 Elasticsearch 가공 후 전송
+filebeab - 특정 폴더(위치)에 적재되는 데이터를 인지 후 Logstach로 전송
+
+- 데이터 파이프라인
