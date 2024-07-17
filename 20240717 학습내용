@@ -1,0 +1,23 @@
+학습 내용
+
+- linux - db 
+    개발/test/운영
+        - linux < docker < mysql db : db
+
+        - window < mysql
+
+1. mysql을 ubuntu에 설치
+    - mysql 자체에 직접 sql 문장
+    - host인 window에서 mysql에 접속 tool
+        - DBeaver
+    mysql 활용 단계
+    1. 설치 및 접속
+    2. database 생성(oracle 해당 단계 없음) - mysql 특징
+    3. database내에 진입 후 테이블 생성 및 crud
+2. ubuntu에서 명령어로 mysql활용
+3. window에서 tool로 access 및 crud
+4. kibana
+    - 우리금융 데이터 기반으로 두개?
+    - 시각화 4인 1팀 - 탐색전
+
+        
