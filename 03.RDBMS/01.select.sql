@@ -3,9 +3,6 @@
  */
 use fisa;
 
-
-
-
 SELECT * from dept;
 
 desc dept;
