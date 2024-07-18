@@ -1,0 +1,1 @@
+{"resources":{"01.select.sql":{"default-datasource":"mysql8-190c33ad546-6b9f5e133a53458c","default-catalog":"fisa"},"03.selectFunction.sql":{"default-datasource":"mysql8-190c33ad546-6b9f5e133a53458c","default-catalog":"fisa"},"schema/emp_dept.sql":{"default-datasource":"mysql8-190c33ad546-6b9f5e133a53458c","default-catalog":"fisa"}}}
