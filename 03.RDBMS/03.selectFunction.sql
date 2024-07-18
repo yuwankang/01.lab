@@ -100,29 +100,41 @@ SELECT * from dept01;
 SELECT dname, LENGTH(dname) from dept01;
 insert into dept01 values('상암');
 -- 4. 문자열 일부 추출 함수 : substr()
--- 서브스트링 : 하나의 문자열에서 일부 언어 발췌하는 로직의 표현
+-- 서브스트링 : 하나의 문자열타입과 date 타입 일부 언어 발췌하는 로직의 표현
 SELECT substr(dname, 1, 2) from dept; -- 여기서 1부터 2까지는 1번째 글자부터 2번째 글자까지라는 뜻, 0부터 시작 안함.
 -- substr(데이터, 시작위치, 추출할 개수)
 -- 시작위치 : 1부터 시작
+
 -- 5. ? 년도 구분없이 2월에 입사한 사원(mm = 02)이름, 입사일 검색
 -- date 타입에도 substr() 함수 사용 가능
 -- 문자열 index 시작 - 1
 select hiredate from emp;
+
 SELECT ename, hiredate  from emp WHERE SUBSTR(hiredate, 6, 7) = 02;
 -- 년도만 검색
+SELECT SUBSTR(hiredate, 6, 2) from emp; 
 -- 월만 검색
+
 -- 일만 검색
---7. 문자열 앞뒤의 잉여 여백 제거 함수 : trim()
+
+-- 7. 문자열 앞뒤의 잉여 여백 제거 함수 : trim()
+
 /*length(trim(' abc ')) 실행 순서
    ' abc ' 문자열에 디비에 생성
    trim() 호출해서 잉여 여백제거
    trim() 결과값으로 length() 실행 */
+SELECT 'abc', CHAR_LENGTH(' abc '), LENGTH(' abc '), LENGTH (TRIM(' abc ')) ; 
 -- *** [날짜 함수] ***
 -- 1. ?어제, 오늘, 내일 날짜 검색
 -- 현재 시스템 날짜에 대한 정보 제공 함수
 -- sysdate() & now(): 날짜 시분 초
 -- curdate() : 날짜
+SELECT SYSDATE(), NOW(), CURDATE() ;
+-- oracle : select sysdate from dual;
 -- 2.?emp table에서 근무일수 계산하기, 사번과 근무일수 검색
+SELECT * from emp;
+SELECT  empno as 사번, CURDATE()-hiredate as 근무일수 from emp; 
+
 -- 3. ? 교육시작 경과일수
 -- 순수 문자열을 날짜 형식으로 변환해서 검색
 /*
@@ -130,6 +142,15 @@ SELECT ename, hiredate  from emp WHERE SUBSTR(hiredate, 6, 7) = 02;
 	변경하는 함수 필수
 	단순 숫자 형식으로 문자 데이터 연산시 정상 연산
 */
+SELECT CURDATE() - 20240708; 
+SELECT CURDATE() - 2024/07/08; -- 원하지 않는 포맷으로 결과가 나온다. 
+SELECT CURDATE() - str_to_date('2024/07/08','%y %m %d'); -- 원하지 않는 결과가 나옴
+
+SELECT str_to_date('2024/07/08','%y %m %d'); -- 원하지 않는 결과가 나옴
+SELECT str_to_date('2024/07/08','%y/%m/%d'); -- 원하지 않는 결과가 나옴
+
+SELECT DATEDIFF(NOW(),'20240708'); 
+
 -- 4. 문자열 날짜로 변경
 -- 5. 특정 일수 및 개월수 더하는 함수 : ADDATE()
 -- 10일 이후 검색
@@ -178,5 +199,5 @@ SELECT ename, hiredate  from emp WHERE SUBSTR(hiredate, 6, 7) = 02;
 -- 2. emp table의 연봉(sal) 인상계산
 -- job이 ANALYST 5%인상(sal*1.05), SALESMAN 은 10%(sal*1.1) 인상,
 -- MANAGER는 15%(sal*1.15), CLERK 20%(sal*1.2) 인상
--- 3. 'MANAGER'인 직군은 '갑', 'ANALYST' 직군은 '을',
--- 나머지는 '병'으로 검색
+
+-- 3. 'MANAGER'인 직군은 '갑', 'ANALYST' 직군은 '을',나머지는 '병'으로 검색
