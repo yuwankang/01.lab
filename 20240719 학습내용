@@ -1,0 +1,43 @@
+발표 5분 브리핑
+
+win에서 진행한뒤 리눅스에서 진행
+
+1. 환경설정 기록
+2. 실패 - 에러 상황도 기록
+   성공 - 진행 상황 기록
+
+3. 기록
+   - readme.md or notion or blog
+
+4. 파이프라인 설정
+   1. ELK 실행
+   2. filebeat 설정
+   3. logstach 설정
+
+5. review
+   1. jdk 실행 환경 수정
+   - ES 정상실행, logstach 실행시 문제 발생
+   - 해결책: logstach의 jdk경로 설정
+   방식: cmd 창으로 관리자 모드로 실행 권장
+   셋팅 후 종료 재실행 후  logstach등 실행
+
+   2. 실행 순서
+   es -> logstach ->filebeat
+   es/bin : es.bat
+   logstach/bin : logstach.exe
+   filebeat : filebeat.exe
+
+   3. 실행을 위한 선행 단계
+   csv 파일에 데이터 저장 - filebeat은 이미 read했던 파일은 파일명을 수정해도 새로운 데이터 간주하지 않음
+   filebeat.yml 수정 
+   logstach/conf/*.conf 파일로 전처리 로직 적용 .filebeat으로 요청 받는 port 설정, es에 index명 설정 output 지정
+
+   4. 실행 명령어
+   es - 단순 실행
+   logstach - bin>logstach-f ../config/*.conf 실행
+   filebeat - >filebeat -e -c filebeat.yml 실행
+
+   5. 확인 및 test
+   - 브라우저 head에서 생성 또는 이미 존재하는 index명인 경우 새로 추가된 데이터 확인
+   - csv 파일에 새로운 데이터 추가 저장 후 콘솔창 확인
+   - 브라우저 head에서 확인
