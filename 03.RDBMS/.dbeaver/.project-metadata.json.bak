@@ -1,1 +1,1 @@
-{"resources":{"schema/emp_dept.sql":{"default-datasource":"mysql8-190c33ad546-6b9f5e133a53458c"}}}
+{"resources":{"01.select.sql":{"default-datasource":"mysql8-190c33ad546-6b9f5e133a53458c","default-catalog":"fisa"},"03.selectFunction.sql":{"default-datasource":"mysql8-190c33ad546-6b9f5e133a53458c","default-catalog":"fisa"},"05.join_mysql.sql":{"default-datasource":"mysql8-190c33ad546-6b9f5e133a53458c"},"schema/emp_dept.sql":{"default-datasource":"mysql8-190c33ad546-6b9f5e133a53458c","default-catalog":"fisa"}}}
