@@ -291,18 +291,31 @@ on e.mgr and m.empno;
 SELECT  * from emp;
 SELECT * from dept;
 
+-- 40번 부서 정보 누락
+-- step01 - 40번 부서 자체가 누락
 SELECT ename, e.deptno, dname
 FROM emp e, dept d
 WHERE e.deptno = d.deptno;
 
+-- step02 - 40번 부서 자체가 누락
+-- 왜? 40번 정보 자체가 없는 그래서 null 자체도 아닌 emp가 기준이었기 때문
+SELECT ename, e.deptno, dname
+FROM emp e left join dept d
+on e.deptno = d.deptno; 
+
+-- step03 - 40번 번호는 누락된 상태에서 부서명만 검색
+SELECT ename, e.deptno, dname
+FROM emp e right join dept d
+on e.deptno = d.deptno; 
+
+--- step04 - step03 개선
+SELECT ename, d.deptno, dname 
+FROM dept d left join emp e
+on e.deptno = d.deptno;
 
 SELECT ename, d.deptno, dname
 FROM emp e right join dept d
 on e.deptno = d.deptno; 
-
-SELECT ename, d.deptno, dname 
-FROM dept d left join emp e
-on e.deptno = d.deptno;
 
 
 -- 미션? 모든 부서번호가 검색(40)이 되어야 하며 급여가 3000이상(sal >= 3000)인 사원의 정보 검색

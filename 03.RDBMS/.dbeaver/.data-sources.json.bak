@@ -4,7 +4,7 @@
 		"mysql8-190c33ad546-6b9f5e133a53458c": {
 			"provider": "mysql",
 			"driver": "mysql8",
-			"name": "localhost",
+			"name": "mysql",
 			"save-password": true,
 			"configuration": {
 				"host": "localhost",
@@ -22,7 +22,7 @@
 						"save-password": true,
 						"properties": {
 							"host": "127.0.0.1",
-							"port": 22,
+							"port": 22.0,
 							"authType": "PASSWORD",
 							"implementation": "sshj",
 							"shareTunnels": true,
