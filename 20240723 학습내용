@@ -1,3 +1,24 @@
 20240723
+sql 진행
+docker 설치
+    - 강사와 함께 설치
+    - orcle 자체를 docker로 설치
 
-docker hub
+    - win < vb < ubuntu < mysql : emp/dept/salgrade
+        - 미션
+    - win < vb < ubuntu < docker < oracle : emp/dept/salgrade
+                                 < mysql
+    1. 오전 수행 팀 단위
+    2. 소요 시간
+    3. 팀 또는 개인
+
+    - docker 삭제 명령어 : $docker rm mysql 별칭
+
+    http - 80
+    http://www.google.com
+    http://www.google.com:80
+    http://...:80
+    ssh 22
+    mysql 3306
+    oracle 1521
+dockerhub 회원가입 - 보륜
