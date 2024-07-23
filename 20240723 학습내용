@@ -21,4 +21,17 @@ docker 설치
     ssh 22
     mysql 3306
     oracle 1521
-dockerhub 회원가입 - 보륜
+dockerhub 회원가입 - 보류
+
+html, css, js 설치 및 서비스 서버 - web server
+java(spring, servlet, jsp)설치 서버 - Web Servlet Engine(web container = Tomcat)
+- Web Application Server(WAS)
+
+설치
+설치 자원 - 설치 당할 자원/ 설치를 위해 필요한 자원
+VB <-> 우분투.이미지 : 서로 자원을 공유하지 않는다. 리소스를 많이 잡아먹는다.
+docker <-> 오라클.이미지
+
+이미지 다운로드 - pull
+이미지 설치해서 DB 시스템 구축 - 이름(별칭), 포트 ..
+    run - 이미지 다운로드, 설치, 실행
