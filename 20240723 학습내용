@@ -35,3 +35,47 @@ docker <-> 오라클.이미지
 이미지 다운로드 - pull
 이미지 설치해서 DB 시스템 구축 - 이름(별칭), 포트 ..
     run - 이미지 다운로드, 설치, 실행
+
+1. docker.io 설치 후 로그인(hub의 id/pw)
+    사용자를 docker 그룹에 포함시켜야 한다.(sudo 생략 가능)
+    sudo apt install -y docder.io
+
+2. docker 설치 확인
+    docker --version
+
+3. docker image 확인
+    $docker images
+
+4. docder container 확인
+    $docker ps -a : 모든 도커 이미지 확인
+    $docker ps : 실행중인 도커 이미지 확인
+    
+5. docker hub에서 nginx 존재 여부 확인
+
+6. nginx 명령어로 이미지 다운로드
+    $docker pull 이미지 이름
+
+7. 다운로드 이미지 검색
+    $docker images
+8. 이미지로 사용가능한 서버 구축(컨테이너 생성)
+    $docker run --name 고유한이름 -d -p 포트포워딩 이미지명
+
+9. Tomcat run 명령어로 다운로드 설치, 실행
+    $docker run --name 고유한이름 -d -p 포트포워딩 이미지명
+
+10. docker 실행중인 컨테이너 확인
+    $docker ps
+11. 컨테이너 리스트 확인
+
+12. 이미지 확인
+
+13. curl 명령어로 Tomcat 서버에 접속
+    $curl http://127.0.0.1:8081
+
+14. Tomcat과 nginx 컨테이너 자체의 os 접속 및 종류 확인
+    $docker exec -it 컨테이너id bash
+
+--------------------------------------------------------------
+미션
+oracle 도커 컨테이너로 설치
+window의 db로 접속 성공하기
