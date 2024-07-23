@@ -1,4 +1,11 @@
 /*
+ * 분석 관련된 sql 책의 내용 일부 활용
+ * - 실존 데이터
+ * - 캐글 사이트에서 제공 받은 데이터
+ * - 사망 비율이 가장 높은 분들은 어떤 분들이까요?
+ * 	 - 가장 저렴한 등급의 객실에 계신 젊은 남성(배려)
+ * 
+
 1. table의 각 컬럼들 분석
 CREATE TABLE titanic_raw
 (	passengerid  INT, 			- 승객 id pk  
@@ -26,7 +33,7 @@ CREATE TABLE titanic_raw
 	방법2 : 기존 table 삭제 + raw table의 데이터들을 기반으로 새로운 정제된 table 만들기
 			- 권장
 	...
-*/
+ */
 
 use fisa;
 

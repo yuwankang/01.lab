@@ -32,6 +32,48 @@
 					}
 				}
 			}
+		},
+		"oracle_thin-190de3a2304-7391168d691073e4": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "oracle",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "1521",
+				"database": "XE",
+				"url": "jdbc:oracle:thin:@//localhost:1521/XE",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"properties": {
+					"useFetchSizeWithLongColumn": "true",
+					"loginTimeout": "20",
+					"oracle.jdbc.jsonDefaultGetObjectType": "java.lang.String",
+					"oracle.jdbc.fanEnabled": "false"
+				},
+				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native",
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"host": "127.0.0.1",
+							"port": 22.0,
+							"authType": "PASSWORD",
+							"implementation": "sshj",
+							"shareTunnels": true,
+							"localHost": "",
+							"remoteHost": ""
+						}
+					}
+				}
+			}
 		}
 	},
 	"virtual-models": {"mysql8-190c33ad546-6b9f5e133a53458c":{"fisa":{"@properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202407221532\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"mysql8-190c33ad546-6b9f5e133a53458c\"\u003e\u003centity id\u003d\"1\" name\u003d\"bank\" fq-name\u003d\"fisa.bank\" order\u003d\"0\" font\u003d\"Segoe UI:9:0\" x\u003d\"696\" y\u003d\"73\"\u003e\u003cpath name\u003d\"fisa\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"ce\" fq-name\u003d\"fisa.ce\" order\u003d\"1\" font\u003d\"Segoe UI:9:0\" x\u003d\"373\" y\u003d\"234\"\u003e\u003cpath name\u003d\"fisa\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"3\" name\u003d\"dept\" fq-name\u003d\"fisa.dept\" order\u003d\"2\" font\u003d\"Segoe UI:9:0\" x\u003d\"210\" y\u003d\"100\"\u003e\u003cpath name\u003d\"fisa\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"4\" name\u003d\"dept01\" fq-name\u003d\"fisa.dept01\" order\u003d\"3\" font\u003d\"Segoe UI:9:0\" x\u003d\"40\" y\u003d\"340\"\u003e\u003cpath name\u003d\"fisa\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"5\" name\u003d\"emp\" fq-name\u003d\"fisa.emp\" order\u003d\"4\" font\u003d\"Segoe UI:9:0\" x\u003d\"40\" y\u003d\"40\"\u003e\u003cpath name\u003d\"fisa\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"6\" name\u003d\"emp01\" fq-name\u003d\"fisa.emp01\" order\u003d\"5\" font\u003d\"Segoe UI:9:0\" x\u003d\"243\" y\u003d\"287\"\u003e\u003cpath name\u003d\"fisa\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"7\" name\u003d\"emp02\" fq-name\u003d\"fisa.emp02\" order\u003d\"6\" font\u003d\"Segoe UI:9:0\" x\u003d\"546\" y\u003d\"280\"\u003e\u003cpath name\u003d\"fisa\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"8\" name\u003d\"empAll\" fq-name\u003d\"fisa.empAll\" order\u003d\"7\" font\u003d\"Segoe UI:9:0\" x\u003d\"872\" y\u003d\"84\"\u003e\u003cpath name\u003d\"fisa\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"9\" name\u003d\"salgrade\" fq-name\u003d\"fisa.salgrade\" order\u003d\"8\" font\u003d\"Segoe UI:9:0\" x\u003d\"543\" y\u003d\"75\"\u003e\u003cpath name\u003d\"fisa\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"fk_emp_deptno\" fq-name\u003d\"fisa.emp.fk_emp_deptno\" type\u003d\"fk\" pk-ref\u003d\"3\" fk-ref\u003d\"5\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}}}}},
