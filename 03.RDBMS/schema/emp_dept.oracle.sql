@@ -45,7 +45,7 @@ CREATE SEQUENCE emp_empno_seq;
 
 SELECT * FROM emp;
  
-
+-- emp에 dept table의 deptno 매핑
 ALTER TABLE emp 
 ADD CONSTRAINT fk_emp_dept FOREIGN KEY (deptno) REFERENCES dept(deptno);
 

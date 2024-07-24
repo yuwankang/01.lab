@@ -1,13 +1,13 @@
 -- mysql (root/root)
 -- 7.DDL.sql
 -- table 생성(create)과 삭제(drop), table 구조 수정(alter)
--- DDL(Data Definition Language)
+-- DDL(Data Definition Language) : table 조작 언어
 
 /* TCL
  * - 트랜잭선 처리 명령어
  * 	- insert/update/delete(DML) 문장에 한해서만 영향을 줌
  * 	- table create/drop/alter(DDL) 명령어와 무관
- * - commit
+ * - commit과 rollback DDL 반영되지 않는다.
  * - rollback 
  */
 
@@ -19,6 +19,8 @@
 		칼럼명1 칼럼타입[(사이즈)] [제약조건] ,
 		칼럼명2....
     ); 
+    
+    create table table명();
 
 [2] table 삭제 명령어
 	drop table table명;
@@ -37,7 +39,7 @@ show tables;
 -- 존재해야만 실행 에러가 없는 drop 문장
 drop table test; 
 
--- 존재 여부 확인 후에 존재할 경우에만 삭제하는 drop 문장
+-- 존재 여부 확인 후에 존재할 경우에만 삭제하는 drop 문장 : 이 문장을 실행하는 것이 좋다.
 drop table if exists test;
 
 
@@ -46,16 +48,49 @@ drop table if exists test;
 -- name은 최대 5개 글자 크기의 문자열 데이터 저장 
 drop table if exists people;
 
+-- people table 만들기
+create table people(
+	name varchar(5),
+	age int
 
+);
 
 desc people;
 
+-- 데이터를 존재하는 table의 모든 컬럼과 컬럼 순서에 맞게 값 저장
+INSERT into people values ('park', 10);
+INSERT into people values ('김아무개', 10);
+
+SELECT * from people;
+
+-- 이름의 길이 카운트 하는 법
+SELECT CHAR_LENGTH(name) from people; -- CHAR_LENGTH는 길이에 따른다.
+SELECT LENGTH(name) from people; -- LENGTH는 데이터 크기에 따른다
+
 
 -- 3. 서브 쿼리 활용해서 emp01 table 생성(이미 존재하는 table기반으로 생성)
--- 구조와 데이터는 복제 가능하나 제약조건은 적용 불가
+-- 주의 : 구조와 데이터는 복제 가능하나 제약조건은 자동 복제 적용 불가
+-- 직접 alter 명령어로 적용해야 함
+/* dept table의 deptno는 emp table의 deptno의 기준 데이터
+ * dept의 deptno - pk
+ * emp의 deptno - fk
+ * dept가 emp의 부모 talbe.주종 관계
+ */
+
+-- mysql에 사전 table 검색
+-- mysql 자체적인 부가 정보를 보유하게 되는 자동 생성되는 read만 가능한 table
+select TABLE_SCHEMA, TABLE_NAME 
+from information_schema.TABLES
+where TABLE_SCHEMA = 'information_schema';
+
+-- emp01 table의 emp로 부터 복제, 제약 조건 추가
 
 drop table if exists emp01;
 
+SELECT * from emp;
+
+CREATE table emp01 as select empno, ename, deptno from emp;
+desc emp01;
 
 select * from emp01;
 drop table if exists emp01;

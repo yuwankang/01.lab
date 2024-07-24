@@ -33,16 +33,16 @@
 				}
 			}
 		},
-		"oracle_thin-190dd901622-2791e2769b8ec8c4": {
+		"oracle_thin-190de3a2304-7391168d691073e4": {
 			"provider": "oracle",
 			"driver": "oracle_thin",
-			"name": "ORCL",
+			"name": "oracle",
 			"save-password": true,
 			"configuration": {
 				"host": "localhost",
-				"port": "1522",
-				"database": "ORCL",
-				"url": "jdbc:oracle:thin:@//localhost:1522/ORCL",
+				"port": "1521",
+				"database": "XE",
+				"url": "jdbc:oracle:thin:@//localhost:1521/XE",
 				"configurationType": "MANUAL",
 				"type": "dev",
 				"closeIdleConnection": true,
@@ -54,17 +54,6 @@
 				},
 				"provider-properties": {
 					"@dbeaver-connection-type@": "BASIC",
-					"show-only-one-schema@": "false",
-					"@dbeaver-check-schema-content@": "false",
-					"@dbeaver-always-show-dba@": "false",
-					"@dbeaver-always-use-dba-views@": "false",
-					"@dbeaver-meta-use-sys-schema@": "false",
-					"@dbeaver-meta-use-simple-constraints@": "false",
-					"@dbeaver-use-rule-hint@": "false",
-					"@dbeaver-use-meta-optimizer@": "true",
-					"@dbeaver-meta-use-alternative-table-query@": "false",
-					"oracle.meta-search-in-synonyms": "false",
-					"oracle.show-date-as-date": "false",
 					"@dbeaver-sid-service@": "SERVICE"
 				},
 				"auth-model": "oracle_native",
@@ -75,7 +64,7 @@
 						"save-password": true,
 						"properties": {
 							"host": "127.0.0.1",
-							"port": 22,
+							"port": 22.0,
 							"authType": "PASSWORD",
 							"implementation": "sshj",
 							"shareTunnels": true,
