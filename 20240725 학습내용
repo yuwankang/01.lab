@@ -1,4 +1,8 @@
 시나리오 기반의 포폴 작성 과정
+0 단계 - window sts 와 ubuntu mysql 연결
+1 단계 - ubuntu에 직접 docker 제외
+2 단계 - 클러스터로 적용 예정(docker 향후)
+
 하나의 우분투에서 작업  ELK + mysql kibana로 시각화
 html 시각화 한 내용의 발표
 
@@ -49,4 +53,18 @@ JDBC API 활용 기술
 	5 단계 - db 접속 해제
 		자원 해제, 필수 작업
 
-        
+추후 일정
+jdbc
+    sql문장이 자바 코드로
+jpa
+    sql문장없이 개발
+    java코드로  sql 문장 자동 생성
+    추상화
+
+mybatis - sql문장 xml에 표현 + java
+SpringBoot(Spring Data JPA)
+    
+개발
+    수정 -> 재컴파일 -> jar(빌드) -> 배포
+    설정정보를 자바코드에서 분리
+            *.properties        
