@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://127.0.0.1:5500/fisa/01.html/titanic.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Kibana Dashboard</title>
+    <link rel="stylesheet" href="./Kibana Dashboard_files/all.min.css">
+    <link href="./Kibana Dashboard_files/css2" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXXNSsV8DFH_R8csTX5D9_puXjAwsBWTonaw&s') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header, footer {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .poster {
+            width: 30%;
+            margin-bottom: 20px;
+        }
+        .person-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .person {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .person:hover {
+            transform: translateY(-10px);
+        }
+        .person img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .person p {
+            margin: 5px 0;
+        }
+        h1 {
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+        iframe {
+            width: 80%;
+            height: 80vh;
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+        footer p {
+            margin: 0;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./Kibana Dashboard_files/k9Ta9mMrYqS5D6w1FpXudW1z4zdge9ZqeB06Y6zVQ9MUv5E8ZQn7ooCtgx-4cIBKP7f_Sbltiu17bSCeXmWQuPWQyrVjgdGdWnPPqS81cmIM-DMgoy3hW0EtjARcyQ_xrcIDeOshHACqHCBSwfMfbA.webp" alt="Titanic Poster" class="poster">
+        <div class="person-container">
+            <div class="person">
+                <img src="data:image/jpeg;base64,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" alt="Person 1">
+                <p><strong>이름:</strong> 로즈 드윗 뷰케이터</p>
+                <p><strong>정보:</strong> 1등석 여자 승객</p>
+            </div>
+            <div class="person">
+                <img src="data:image/jpeg;base64,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" alt="Person 2">
+                <p><strong>이름:</strong> 잭 도슨</p>
+                <p><strong>정보:</strong> 3등석 남자 승객</p>
+            </div>
+        </div>
+    </header>
+    <h1>Kibana Dashboard</h1>
+    <iframe src="./Kibana Dashboard_files/dashboards.html" frameborder="0"></iframe>
+    <footer>
+        <p>© 2024 My Dashboard</p>
+        <p><a href="https://example.com/" target="_blank" style="color: #fff;"><i class="fas fa-external-link-alt"></i> Visit our site</a></p>
+    </footer>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>

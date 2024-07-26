@@ -1,12 +1,13 @@
 -- titanic 실 데이터
--- https://www.kaggle.com/competitions/titanic/data?select=train.csv
+-- https://www.kaggle.com/code/alexisbcook/titanic-tutorial
 
+use fisa;
 
 -- 정제전 raw 데이터를 보유한 table
 -- titanic_raw table 생성 
-DROP TABLE IF EXISTS titanic;
+DROP TABLE IF EXISTS titanic_raw;
 
-CREATE TABLE titanic
+CREATE TABLE titanic_raw
 (	passengerid  INT,
 	survived     INT,
 	pclass       INT,
@@ -22,12 +23,10 @@ CREATE TABLE titanic
 	PRIMARY KEY (passengerid)
 );
 
-desc titanic;
 
-SELECT count(*) from  titanic;
 
 -- titanic INSERT
-INSERT INTO titanic VALUES 
+INSERT INTO titanic_raw VALUES 
 (205,1,3,'Cohen, Mr. Gurshon "Gus"','male',18,0,0,'A/5 3540',8.05,null,'S'),
 (206,0,3,'Strom, Miss. Telma Matilda','female',2,0,1,'347054',10.4625,'G6','S'),
 (207,0,3,'Backstrom, Mr. Karl Alfred','male',32,1,0,'3101278',15.85,null,'S'),
