@@ -1,4 +1,4 @@
-package step01.basic;
+package db.util;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.Statement;
@@ -47,7 +47,7 @@ public class DBUtil {
        		stmt = null;
        	}
        	if(conn != null) {
-       		conn.close();
+       		conn.close(); 
        		conn = null;
        	}
    	}catch(SQLException e) {

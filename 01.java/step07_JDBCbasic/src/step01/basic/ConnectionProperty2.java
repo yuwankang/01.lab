@@ -13,6 +13,8 @@ import java.sql.Statement;
 
 import org.junit.Test;
 
+import db.util.DBUtil;
+
 public class ConnectionProperty2 {
 
 	//select * from dept

@@ -18,6 +18,10 @@
         - ES 로그처리(web server) 데이터 적용 필수(현업축소판)
         - 약어사전 작성 필수
         - rdbms 프로시저 하나만 구축해서 
+        - 사고력 & 구현 코드의 품질이 좋아야 함. stream api 사용
+        - 경우의 수 먼저 도출 후 개발
+        : 경우의 수 고려(의사코드) 기록
+        
 
 학습 내용
 1. 사용 table
@@ -30,7 +34,40 @@
                 - ArrayList<Dept01DTO)
                 - Dept01DTO - 하나의 부서 정보를 보유하게 되는 데이터 표현용 클래스
         2. 부서 번호로 특정 부서 검색
+                - 경우의 수
+                1. 정상 실행
+                        - 존재하는 부서 번호 검색
+                                - 반환값 : Dept01DTO 객체 
+                        - 미존재하는 부서 번호로 검색
+                                - 반환값 : 
+                2. 비정상 실행
+                        - 예외 발생 : 처리 가능한 경미한 에러, try ~ catch 
+                        - 에러 : 심각한 에러 
+                - public Dept01DTO getDept01One(int deptno){
+                        select * from dept01 where deptno = ?
+
+                        경우의 수 1 - 
+                                데이터가 존재할 경우 - Dept01DTO 객체 반환
+                                미존재할 경우 = null
+
+                        경우의 수 2 - 
+                                Optional 반환
+                }
         3. 새로운 부서 등록
+                - 경우의 수
+                1. pk가 중복 고려
+                        중복 되었다. - 상황을 client 에게 언급
+
+                        중복 아니다. - 정상 저장
+                2. 예외 발생
+                ..
+                구현 코드 예시
+                - 웹브라우저 입력되는 데이터가 네트워크 타고 서버에 전송
+                public boolean insertDept01(Dept01DTO newDept){} -- 1번으로만 한다. void로 한경우 클라이언트가 모름 예외를 던져야함
+                public ? insertDept01(int deptno, String dname, String loc){}
+
+                - SpringBoot에선 브라우저에서 전송되는 데이터의 별칭과 DTO 클래스 멤버변수명이 동일한 경우 DTO 자동 생성
+
         4. 존재하는 부서 삭제
         5. 부서 정보 수정
         ...
@@ -39,4 +76,14 @@
         1. 클래스 구조
                 dept01 DTO
                        DAO
-        
+
+4. 개발환경 참고 
+        1. oracle
+                window < vb < ubuntu < docker container < ubuntu 14 < oracle
+                                        oracle jdbc 통신 포트 1521
+                              ubuntu : 접속시 포트 포워딩 -p 1521 : 1521
+                        127.0.0.1 : 1521:<-> 10.0.2.15 : 1521 매핑
+        2. 소스 개발 구조
+                maven 기반의 driver 셋팅
+                gradle 기반 라이브러리
+                        
