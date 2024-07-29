@@ -1,0 +1,42 @@
+1. sql 마무리
+2. jdbc crud
+        select
+3. 주간
+        jdbc -> jap 
+        -> web(비동기, 순수 js)
+                :javascript, sevlet, javascript 
+        -> SpringBoot
+                : spring jdata jap 
+                : mvc                
+        : 코드 검증 및 튜닝등 gpt 활용
+        (프롬포트 엔지니어링)
+        : 3일간 프로젝트
+        - biz 마인드로 주제선정
+        - biz 특강 내용
+        - 애완동물 제외
+        - gitbash 사용 필수
+        - ES 로그처리(web server) 데이터 적용 필수(현업축소판)
+        - 약어사전 작성 필수
+        - rdbms 프로시저 하나만 구축해서 
+
+학습 내용
+1. 사용 table
+        - dept01
+
+2. 구현 로직
+        1. 모든 검색
+                - 모든 정보를 하나의 객체에 담아서 최종 view에게 전달 출력 위임
+                - 자바는 반환이 하나이다. ArrayList를 사용하는 것이 좋다.
+                - ArrayList<Dept01DTO)
+                - Dept01DTO - 하나의 부서 정보를 보유하게 되는 데이터 표현용 클래스
+        2. 부서 번호로 특정 부서 검색
+        3. 새로운 부서 등록
+        4. 존재하는 부서 삭제
+        5. 부서 정보 수정
+        ...
+
+3. 개발 설계
+        1. 클래스 구조
+                dept01 DTO
+                       DAO
+        
