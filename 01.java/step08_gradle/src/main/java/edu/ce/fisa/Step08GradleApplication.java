@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Step08JdbcBasicApplication {
+public class Step08GradleApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Step08JdbcBasicApplication.class, args);
+		SpringApplication.run(Step08GradleApplication.class, args);
 	}
 
 }
