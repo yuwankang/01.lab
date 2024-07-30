@@ -82,7 +82,7 @@ public class Depto01DAO {
 			pstmt.setInt(1, deptno);
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()) { // 반복 획수가 불명확 할때 주로 사용되는 반복문
+			if(rs.next()) {
 				datas=new Dept01DTO(rs.getInt(1), rs.getString("dname"), rs.getString(3));
 			}
 		

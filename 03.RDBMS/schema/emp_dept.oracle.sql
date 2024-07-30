@@ -17,7 +17,7 @@ CREATE TABLE dept (
     CONSTRAINT pk_dept PRIMARY KEY (deptno)
 );
 
-SELECT * FROM dept;
+SELECT * FROM Dept;
 
 -- number(4): 최대 4자리까지의 정수
 -- number(7, 2) : 최대 7자리 단 소수점 이하 2자리까지 ex:12345.24
@@ -50,12 +50,12 @@ ALTER TABLE emp
 ADD CONSTRAINT fk_emp_dept FOREIGN KEY (deptno) REFERENCES dept(deptno);
 
 -- 존재하는 table에 데이터 저장
-insert into dept values(10, 'ACCOUNTING', 'NEW YORK');
-insert into dept values(20, 'RESEARCH', 'DALLAS');
-insert into dept values(30, 'SALES', 'CHICAGO');
-insert into dept values(40, 'OPERATIONS', 'BOSTON');
+insert into Dept values(10, 'ACCOUNTING', 'NEW YORK');
+insert into Dept values(20, 'RESEARCH', 'DALLAS');
+insert into Dept values(30, 'SALES', 'CHICAGO');
+insert into Dept values(40, 'OPERATIONS', 'BOSTON');
   
-SELECT * FROM dept;
+SELECT * FROM Dept;
 
 SELECT * FROM emp;
 -- sequence 생성은 했으나 적용 없이 pk구분해서 저장
