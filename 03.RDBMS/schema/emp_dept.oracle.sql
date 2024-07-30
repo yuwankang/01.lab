@@ -10,7 +10,7 @@ drop table dept;
 
 -- dept table 생성
 -- 한부서 표현 속성 : 부서번호(중복불허)/ 부서명 / 지역 
-CREATE TABLE dept (
+CREATE TABLE Dept (
     deptno               number(4),
     dname                varchar2(20),
     loc                  varchar2(20),
