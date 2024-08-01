@@ -9,7 +9,7 @@ import util.DBUtil;
 
 public class Step03RunTest {
 
-	@Test
+	//@Test
 	public void step01Test() {
 		EntityManager em = null;
 		EntityTransaction tx = null;

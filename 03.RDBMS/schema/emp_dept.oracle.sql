@@ -59,10 +59,7 @@ SELECT * FROM Dept;
 
 SELECT * FROM emp;
 -- sequence 생성은 했으나 적용 없이 pk구분해서 저장
-insert into emp values(7839, 'KING', 'PRESIDENT', null, 
-                       TO_DATE('17-11-1981', 'DD-MM-YYYY'), 5000, null, 10);
-
-                       
+insert into emp values(7839, 'KING', 'PRESIDENT', null, TO_DATE('17-11-1981', 'DD-MM-YYYY'), 5000, null, 10);                       
 insert into emp values(7698, 'BLAKE', 'MANAGER', 7839, TO_DATE('1-5-1981','DD-MM-YYYY'), 2850, null, 30);
 insert into emp values(7782, 'CLARK', 'MANAGER', 7839, TO_DATE('9-6-1981','DD-MM-YYYY'), 2450, null, 10);
 insert into emp values(7566, 'JONES', 'MANAGER', 7839, TO_DATE('2-4-1981','DD-MM-YYYY'), 2975, null, 20);
