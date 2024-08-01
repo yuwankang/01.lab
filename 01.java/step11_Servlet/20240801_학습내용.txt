@@ -1,0 +1,69 @@
+servlet & jsp 학습
+
+1. 개발 환경
+	1. tomcat 10
+	2. 브라우저(크롬)
+	
+2. 개발 소스 종류
+	1. *.java
+		- 순수 자바(http통신 불가능)
+		- http 요청 처리 가능한 servlet
+	2. *.jsp
+		- html/css/js/java 코드 다 구현 가능한 스펙
+	3. *.html
+		- html/css/js 코드로만 구현, 화면 처리용
+	4. *.css
+		- 브라우저 출력을 보기좋게 꾸미는 UI 코드
+	5. *.js
+		- javascript 로만 구성된 파일
+		- js는 html or jsp 파일에 포함되어 개발되기도 함 		
+	
+3. STS와 실제 실행 URL 비교
+	1. sts [ Version: 4.23.1.RELEASE] web 개발구조
+		project
+			- javaResource
+			- src
+				- main
+					- java 
+						- *.java(순수자바와 servlet)
+					- webapp
+						- *.html
+						- *.jsp
+						- WEB-INF
+							web.xml
+	2. url로 요청
+		1. html
+			http://ip:port/context명/*.html
+		2. jsp
+			http://ip:port/context명/*.jsp
+		3. servlet
+			http://ip:port/context명/url매핑값만
+	
+4. 주요 API
+	- 구현은 하나 호출 코드는 개발자 권한 안님
+	- 호출 시점 : client가 url 입력후 요청시 자동 실행
+	- 호출은 요청받고 get? post? 확인 및 방식별 호출은 
+		web container내부 로직
+	1. doGet() 
+		- 호출 시점
+		- 브라우저 주소줄 요청시 자동 실행
+		- postman에서 GET 방식 지정해서 자동 실행
+		- get방식은 별도의 추가 설정 없이도 url로 입력해서 요청하면
+			자동 실행되는 방식
+			http의 기본 방식
+	2. doPost()
+		- 호출 시점
+		- postman에서 POST 방식 지정해서 자동 실행
+
+	http://www.google.com - get방식
+	http://www.naver.com - get방식
+	http://ip:port/step11_Servlet/fisa  - get요청
+
+
+
+
+
+
+
+
+
