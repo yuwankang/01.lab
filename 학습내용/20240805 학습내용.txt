@@ -29,7 +29,19 @@
         3. delete 방식
         4. update 방식
     - web page 이동 api
-        
+        1. html 코드로 처리하는 방식
+
+        2. servlet api 처리 방식
+            - fowarding 
+            - redirect 
+    - client의 지속성 상태 관리 기술
+        - 웹 기본 스펙 : 무상태연결 유지
+        - 로그인 ~ 로그아웃 까지 지속성 상태 유지는 코드 개발
+        - 모든 웹 개발 스펙 공통 방식
+        1. javax.servlet.http.HttpSession
+            -server 메모리에 상태값 저장
+        2. javax.servet.http.Cookie
+            -clinet 시스템에 상태값 저장
 
 3. web page이동 방식
 4. client상태 유지를 위한 세션과 쿠키
@@ -52,5 +64,43 @@ log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:
 #log4j.logger.org.hibernate=OFF
 #log4j.loggerjavax.persistence=OFF
 
+-----------------------------------------------------------------------------------------------
+2. servlet
+    1. servlet객체 수는 client수와 무관하게 한개로 관리
+    - 생성시점?
+    - 예시
+        로그인 요청을 받는 servlet으로 가정
+        client가 입력하는 id/pw다 다름
+        개별 메소드로 처리 및 실행
+        - 멤버 변수로 id/pw값을 받을지? 로컬 변수로 받을지?
 
+        필요 로직
+            1. id.pw 입력 양식 - 입력폼
+            2. id/pw값을 받는 servlet : LoginServlet
+                - Post 방식 데이터 전송
+                - 브라우저 주소줄에서 은닉되어 데이터 전송, 요청 body에 은닉되어 전송
+                ? id = 아이디값&pw=비번
 
+    - 객체는 하나, 메소드는 다수 실행되는 구조로 개발
+    - 객체 생성 및 메소드 호출은 개발자가 코드로 하지 않음
+        : tomcat(web server, web container, servlet engine..) 호출
+
+2. servlet 주요 API
+    1. HttpServlet
+        - http 통신 관련 로직을 구현해서 제공
+        - 사용자 정의 상속 받는 하위 클래스로 필요 방식 관련된 메소드만 재정의 http통신 가능
+    2. HttpServletRequest
+        - client의 접속 정보 보유하게 되는 객체
+        - client 요청시 자동 생성
+        - client ip/입력데이터등 다 보유
+        - 한글 데이터 깨짐현상은 고려
+        - 코드로 생성하지 않음(web server 내부의 로직이 처리, webserver 필수)
+        - 데이터 하나만 착출하는 메소드
+            String getParameter(key)
+        - 취미 처럼 다수의 데이터를 한 번에 착출하는 메소드
+
+    3. HttpServletResponse
+        - client의 응답 정보 보유하게 되는 객체
+        - 코드로 생성하지 않음
+        - 접속해서 생성하게 한 client에게만 응답
+        - 한글 데이터 깨짐현상 다 고려
