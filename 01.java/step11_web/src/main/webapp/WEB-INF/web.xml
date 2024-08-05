@@ -23,4 +23,23 @@
   	<servlet-name>login</servlet-name>
   	<url-pattern>/login</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>one</servlet-name>
+  	<servlet-class>step02.pagemove.One</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>one</servlet-name>
+  	<url-pattern>/one</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>two</servlet-name>
+  	<servlet-class>step02.pagemove.Two</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>two</servlet-name>
+  	<url-pattern>/two</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
