@@ -1,5 +1,20 @@
-log4j.rootCategory=info, CONSOLE
+학습 내용
+1. log4j framework 설정 파일
+- file명 고정 - log4j.properties
+- 위치 - java소스 경로에 함께 적용
+- 소스 부연 설명
+    log4j.rootCategory=info, file, CONSLE
+        log4j.rootCategory : 어디에 어떤 형식으로 출력할 것인지 지정하는 영역
+        info : 표현하고자 하는 로그 레밸
+            tract > debug > info > warn > error > fatal
+        file, CONSLE : 사용자 정으 ㅣ순수 이름
+            file : 출력 목적지가 file일듯
+            CONSLE : 출력 목적지가 서버 콘솔창 
 
+
+- log4j properties
+
+log4j.rootCategory=info, CONSOLE
 
 # CONSOLE is set to be a ConsoleAppender using a PatternLayout.
 log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
