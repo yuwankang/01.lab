@@ -2,11 +2,25 @@
 	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>khk</groupId>
-	<artifactId>step11_Servlet</artifactId>
+	<groupId>fisa</groupId>
+	<artifactId>step11_web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
-
+	<packaging>war</packaging>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<release>21</release>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.3</version>
+			</plugin>
+		</plugins>
+	</build>
 	<dependencies>
 
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -58,5 +72,4 @@
 		</dependency>
 
 	</dependencies>
-
 </project>

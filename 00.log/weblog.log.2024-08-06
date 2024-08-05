@@ -1,0 +1,74 @@
+2024-08-05 09:39:10 INFO  FirstServlet:40 - 접속한 client ip 와 id 0:0:0:0:0:0:0:1-null
+2024-08-05 09:39:10 WARN  FirstServlet:41 - warn*****
+2024-08-05 09:39:10 ERROR FirstServlet:42 - error*****
+2024-08-05 09:39:10 FATAL FirstServlet:43 - fatal*****
+2024-08-05 09:39:12 INFO  FirstServlet:40 - 접속한 client ip 와 id 0:0:0:0:0:0:0:1-null
+2024-08-05 09:39:12 WARN  FirstServlet:41 - warn*****
+2024-08-05 09:39:12 ERROR FirstServlet:42 - error*****
+2024-08-05 09:39:12 FATAL FirstServlet:43 - fatal*****
+2024-08-05 09:39:12 INFO  FirstServlet:40 - 접속한 client ip 와 id 0:0:0:0:0:0:0:1-null
+2024-08-05 09:39:12 WARN  FirstServlet:41 - warn*****
+2024-08-05 09:39:12 ERROR FirstServlet:42 - error*****
+2024-08-05 09:39:12 FATAL FirstServlet:43 - fatal*****
+2024-08-05 10:05:55 INFO  FirstServlet:40 - 접속한 client ip 와 id 0:0:0:0:0:0:0:1-null
+2024-08-05 10:05:55 WARN  FirstServlet:41 - warn*****
+2024-08-05 10:05:55 ERROR FirstServlet:42 - error*****
+2024-08-05 10:05:55 FATAL FirstServlet:43 - fatal*****
+2024-08-05 10:36:59 INFO  FirstServlet:20 - FirstServlet info() ***
+2024-08-05 10:36:59 WARN  FirstServlet:21 - FirstServlet warn() ***
+2024-08-05 10:36:59 ERROR FirstServlet:22 - FirstServlet error() ***
+2024-08-05 10:36:59 INFO  FirstServlet:28 - FirstServlet doGet info() ***
+2024-08-05 10:36:59 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
+2024-08-05 10:36:59 ERROR FirstServlet:30 - FirstServlet doGet error() ***
+2024-08-05 10:37:04 INFO  FirstServlet:28 - FirstServlet doGet info() ***
+2024-08-05 10:37:04 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
+2024-08-05 10:37:04 ERROR FirstServlet:30 - FirstServlet doGet error() ***
+2024-08-05 10:39:07 INFO  FirstServlet:28 - FirstServlet doGet info() ***
+2024-08-05 10:39:07 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
+2024-08-05 10:39:07 ERROR FirstServlet:30 - FirstServlet doGet error() ***
+2024-08-05 10:39:08 INFO  FirstServlet:28 - FirstServlet doGet info() ***
+2024-08-05 10:39:08 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
+2024-08-05 10:39:08 ERROR FirstServlet:30 - FirstServlet doGet error() ***
+2024-08-05 10:39:33 INFO  FirstServlet:28 - FirstServlet doGet info() ***
+2024-08-05 10:39:33 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
+2024-08-05 10:39:33 ERROR FirstServlet:30 - FirstServlet doGet error() ***
+2024-08-05 10:39:50 DEBUG FirstServlet:19 - FirstServlet debug() ***
+2024-08-05 10:39:50 INFO  FirstServlet:20 - FirstServlet info() ***
+2024-08-05 10:39:50 WARN  FirstServlet:21 - FirstServlet warn() ***
+2024-08-05 10:39:50 ERROR FirstServlet:22 - FirstServlet error() ***
+2024-08-05 10:39:50 DEBUG FirstServlet:27 - FirstServlet doGet debug() ***
+2024-08-05 10:39:50 INFO  FirstServlet:28 - FirstServlet doGet info() ***
+2024-08-05 10:39:50 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
+2024-08-05 10:39:50 ERROR FirstServlet:30 - FirstServlet doGet error() ***
+2024-08-05 10:40:04 DEBUG FirstServlet:27 - FirstServlet doGet debug() ***
+2024-08-05 10:40:04 INFO  FirstServlet:28 - FirstServlet doGet info() ***
+2024-08-05 10:40:04 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
+2024-08-05 10:40:04 ERROR FirstServlet:30 - FirstServlet doGet error() ***
+2024-08-06 10:46:58 DEBUG FirstServlet:27 - FirstServlet doGet debug() ***
+2024-08-06 10:46:58 INFO  FirstServlet:28 - FirstServlet doGet info() ***
+2024-08-06 10:46:58 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
+2024-08-06 10:46:58 ERROR FirstServlet:30 - FirstServlet doGet error() ***
+2024-08-06 10:47:04 DEBUG FirstServlet:27 - FirstServlet doGet debug() ***
+2024-08-06 10:47:04 INFO  FirstServlet:28 - FirstServlet doGet info() ***
+2024-08-06 10:47:04 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
+2024-08-06 10:47:04 ERROR FirstServlet:30 - FirstServlet doGet error() ***
+2024-08-06 10:47:14 DEBUG FirstServlet:27 - FirstServlet doGet debug() ***
+2024-08-06 10:47:14 INFO  FirstServlet:28 - FirstServlet doGet info() ***
+2024-08-06 10:47:14 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
+2024-08-06 10:47:14 ERROR FirstServlet:30 - FirstServlet doGet error() ***
+2024-08-06 10:48:00 DEBUG FirstServlet:19 - FirstServlet debug() ***
+2024-08-06 10:48:00 INFO  FirstServlet:20 - FirstServlet info() ***
+2024-08-06 10:48:00 WARN  FirstServlet:21 - FirstServlet warn() ***
+2024-08-06 10:48:00 ERROR FirstServlet:22 - FirstServlet error() ***
+2024-08-06 10:48:00 DEBUG FirstServlet:27 - FirstServlet doGet debug() ***
+2024-08-06 10:48:00 INFO  FirstServlet:28 - FirstServlet doGet info() ***
+2024-08-06 10:48:00 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
+2024-08-06 10:48:00 ERROR FirstServlet:30 - FirstServlet doGet error() ***
+2024-08-06 10:48:05 DEBUG FirstServlet:27 - FirstServlet doGet debug() ***
+2024-08-06 10:48:05 INFO  FirstServlet:28 - FirstServlet doGet info() ***
+2024-08-06 10:48:05 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
+2024-08-06 10:48:05 ERROR FirstServlet:30 - FirstServlet doGet error() ***
+2024-08-06 10:48:06 DEBUG FirstServlet:27 - FirstServlet doGet debug() ***
+2024-08-06 10:48:06 INFO  FirstServlet:28 - FirstServlet doGet info() ***
+2024-08-06 10:48:06 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
+2024-08-06 10:48:06 ERROR FirstServlet:30 - FirstServlet doGet error() ***

@@ -11,15 +11,32 @@
             file : 출력 목적지가 file일듯
             CONSLE : 출력 목적지가 서버 콘솔창 
 
+1. log4j 활용 연습
+    - log file 자동 생성
+        - 로그 레벨 수정하면서 매핑된 메소드 실행 여부 확인
+    - 메소드로 출력 제어
+    - 시스템 시간 변경하면서 백업 로그 파일 생성확인
+
+2. servlet api 개발 기술
+    - java 기반의 웹 원조 스펙
+    - http 통신이 가능한 유일한 자바 파일
+    - jsp 근원
+        - jsp 파일은 html/css/javascript/java tag로 구성된 웹 브라우저 출력 스펙
+        - jsp 요청시 servlet 자동 변환
+    - http 요청 및 처리 방식
+        1. get 방식
+        2. post 방식
+        3. delete 방식
+        4. update 방식
+    - web page 이동 api
+        
+
+3. web page이동 방식
+4. client상태 유지를 위한 세션과 쿠키
+5. UI 템플릿 반영
+
 
 - log4j properties
-
-log4j.rootCategory=info, CONSOLE
-
-# CONSOLE is set to be a ConsoleAppender using a PatternLayout.
-log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
-log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
-log4j.appender.CONSOLE.layout.ConversionPattern=%m%n
 
 log4j.rootCategory=info, file, CONSOLE
 # CONSOLE is set to be a ConsoleAppender using a PatternLayout.
@@ -34,4 +51,6 @@ log4j.appender.file.layout=org.apache.log4j.PatternLayout
 log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
 #log4j.logger.org.hibernate=OFF
 #log4j.loggerjavax.persistence=OFF
+
+
 
