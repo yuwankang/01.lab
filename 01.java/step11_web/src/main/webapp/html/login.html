@@ -132,7 +132,10 @@ span.psw {
 		 현 html문서의 url 경로에서 login url 요청의미
 		 http://ip:port/context명/login.html
 		 http://ip:port/context명/login -->
-	<!-- html과 jsp는 확장자까지 url에 입력 serlvet은 확장없이 매핑해 놓은 url pattern값으로 url 입력 -->
+	<!-- 
+		html과 jsp는 확장자 까지 url에 입력
+		servlet은 확장자 없이 매핑해 놓은 url pattern 값으로 url에 입력
+	 --> 
 	<!-- web page 이동 이해하기 -->
 	<h2>get방식으로 로그인</h2>
 	<form action="../loginTest" method="get">
@@ -141,12 +144,7 @@ span.psw {
 			<input type="submit" value="로그인">
 	</form>
 	<hr>
-	
-	<!-- 
-		http://localhost/step11_web/html/login.html
-		action="/loginTest"로 코딩했을 경우
-		http://localhost/login.html
-	 -->
+
 	<h2>post방식으로 로그인</h2>
 	<form action="../loginTest" method="post">
 		id : <input type="text" name="id"> <br>
