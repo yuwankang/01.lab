@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>js 문법</h3>
+    <br><hr><br>
+
+    1. 개발시 chrome 브라우저 f12로 console 확인<br>
+    2. 문법 <br>
+    &nbsp; - 변수, 
+             메소드(class내부에 구현되는 기능), 
+             함수(class와 무관하게 독립적으로 개발 가능한 기능), 
+             클래스 <br>
+    &nbsp; - 생성자, 타입, 제공하는 api들이 이미 존재<br>
+    &nbsp; - 브라우저에 실행되는 브라우저 인터프리터 언어<br>
+    &nbsp; - python과 흡사, 타입선언 없이 변수 활용 가능<br>
+    <br><hr><br>
+
+    <script>
+        //js 구현 영역
+        //1단계 - 변수
+        var v1 = 10;
+        v2 = 20;
+        const v3 = 30; //상수, java에서 final
+        let v4 = 40;
+        console.log(v1, typeof(v1));//브라우저 콘솔창 출력 함수
+        v1 = 'string'; //타입 변환
+        console.log(v1, typeof(v1));//shift alt 방향키로 복제
+
+        //js 사용자 정의 함수
+        console.log("***step01 - 전역변수를 함수에서 호출");
+        function myFun1(){
+            console.log(v1);
+            console.log(v2);
+            console.log(v3);
+            console.log(v4);
+        }
+        myFun1();
+        console.log("***step02 - 로컬변수 함수에서 선언 및 호출");
+        function myFun2(){
+            var v11 = 10; //로컬 변수
+            v21 = 20;     //전역 변수
+            const v31 = 30; //로컬 변수
+            let v41 = 40; //로컬 변수
+            
+            console.log(v11);
+            console.log(v21);
+            console.log(v31);
+            console.log(v41);
+        }
+        myFun2();
+        //console.log(v11);
+        console.log(v21);
+        //console.log(v31);
+        //console.log(v41);
+        console.log("***step03 - 로컬변수 함수 조건식 내에서 선언 및 호출");
+        /* java = true/false
+           python = True/Fasle
+           js - true/false
+        */
+        function myFun3(){
+            if(true){
+            var v111 = 10;   //함수 내부의 로컬 변수
+            v211 = 20;       //전역 변수
+            const v311 = 30; //if 조건내에서만 사용 가능한 로컬 변수
+            let v411 = 40;   //if 조건내에서만 사용 가능한 로컬 변수
+        }
+            console.log(v111);
+            console.log(v211);
+            //console.log(v311);
+            //console.log(v411);
+        }
+        myFun3();
+        </script>
+
+</body>
+</html>

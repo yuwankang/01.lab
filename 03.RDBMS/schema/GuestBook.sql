@@ -34,7 +34,7 @@ commit;
 
 
 
-
+SELECT * FROM gbook;
 
 
 

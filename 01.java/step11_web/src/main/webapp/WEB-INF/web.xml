@@ -46,4 +46,14 @@
     <servlet-name>Logout</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FisaServlet</display-name>
+    <servlet-name>FisaServlet</servlet-name>
+    <servlet-class>step04.ajax.FisaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FisaServlet</servlet-name>
+    <url-pattern>/ajaxfisa</url-pattern>
+  </servlet-mapping>
 </web-app>
