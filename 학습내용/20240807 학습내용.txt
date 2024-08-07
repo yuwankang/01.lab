@@ -17,3 +17,12 @@ AJAX 필수 암기 사항
 
 js - html,jsp
 js - back(java, tomcat)  
+
+1. 비동기 적용
+    모든 게시글 보기 하단에 상세보기 적용
+2. 설계
+    list.jsp
+        - 제목 클릭 확인
+        - div tag 출력
+            read.jsp
+

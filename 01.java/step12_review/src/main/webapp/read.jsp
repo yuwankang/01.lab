@@ -9,7 +9,7 @@
 <meta charset="UTF-8"> 
 <title>read.jsp</title>
 
-	<script language=javascript>
+	<!-- <script>
 
 	//수정 요청 로직 수행 기능
 		function sendUpdate(){
@@ -30,7 +30,7 @@
 				return false;
 			}
 		}
-	</script>
+	</script> -->
 	
 </HEAD>
 
