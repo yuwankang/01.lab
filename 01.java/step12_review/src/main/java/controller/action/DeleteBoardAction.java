@@ -31,8 +31,8 @@ public class DeleteBoardAction implements Action{
 			request.getRequestDispatcher("error.jsp").forward(request, response);
 		}catch (Exception e){
 			request.setAttribute("errorMsg", e.getMessage());
-			request.getRequestDispatcher("error.jsp").forward(request, response);
 		}
+		request.getRequestDispatcher("error.jsp").forward(request, response);
 	}
 	
 }

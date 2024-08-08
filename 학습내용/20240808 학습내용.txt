@@ -1,0 +1,11 @@
+학습내용
+
+4주간 공부할 내용
+첫번째: 16일 발표프로젝트 리팩토링
+두번째: 책 read Spring책
+
+-------------
+jre 
+linux tomcat 설치 : servlet & jsp 앱 배포(war)
+non-tomcat 설치 : spring boot 배포(내장서버) jar
+        - 

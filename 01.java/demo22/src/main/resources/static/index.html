@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index.html</title>
+</head>
+<body>
+
+	<button id="dataViewPeople">People 정보</button>
+	<br>
+	<button id="dataViewPeople2">People2 정보</button>
+	<br>
+	<button id="dataViewPeople3">Axios Get 방식 People 정보</button>
+	<br>
+	<button id="dataViewPeople4">Axios Post 방식 People 정보</button>
+	<br>
+
+	<div id="dataView"></div>
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript">
+	//? get과 post 둘다 개별 함수로 개발
+	//axios library 사용해서 개발 - postman 사용 금지
+	//node.js 설치 안한 상태
+dataViewPeople4.addEventListener("click", () => {
+  axios({
+    method: 'post',
+    url: 'fisadata',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    data: 'name=전청조&age=10'
+  })
+    .then((response) => {
+      // 요청 성공 시 처리
+      let resData = response.data;
+      console.log(resData);
+    })
+    .catch((error) => {
+      // 요청 실패 시 처리
+      console.error('Error:', error);
+    });
+});
+
+dataViewPeople3.addEventListener("click", () => {
+	  axios({
+	    method: 'get',
+	    url: 'fisadata',
+	    params: {
+	      data: '전창조 10살'
+	    }
+	  })
+	    .then((response) => {
+	      // 요청 성공 시 처리
+	      let resData = response.data;
+	      console.log(resData);
+	    })
+	    .catch((error) => {
+	      // 요청 실패 시 처리
+	      console.error('Error:', error);
+	    });
+	});
+	
+	
+	//바닐라 js
+	/* dataViewPeople2.addEventListener("click", function(){
+		const xhttp = new XMLHttpRequest();//비동기 요청 자바스크립트 객체
+		
+		xhttp.onreadystatechange = function() {//readyState 값이 변경될때마다 감지 및 동작 수행
+			if (this.readyState == 4 && this.status == 200) {//4 : 응답완료
+		
+				let resData = this.responseText;//server 응답 데이터 가로채는 속성
+			}//end of if
+		}	//end of onready
+		xhttp.open("POST","fisadata"); //post방식
+		//post 방식에 필수 설정
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("name=연아&age=10");
+	}); */
+/* 서버와 클라이언트 소통 - 문자열
+ * 서버 -> 클라이언트 : server는 html/css/js도 순수문자열로 간주
+ 				   client의 브라우저가 실행코드로 간주 후 브라우저 실행
+ 				   응답된 문자열 js객체화 하는 형식은 JSON만 고려
+ 				   단. json 변환가능한 문자열 형식이여야 JSON.parse()
+ 
+ */
+	// 버튼 ID 이벤트 등록
+	//http://ip:81/ce/index.html
+	dataViewPeople.addEventListener("click", function(){
+		const xhttp = new XMLHttpRequest();//비동기 요청 자바스크립트 객체
+		
+		xhttp.onreadystatechange = function() {//readyState 값이 변경될때마다 감지 및 동작 수행
+			if (this.readyState == 4 && this.status == 200) {//4 : 응답완료
+		
+				let resData = this.responseText;//server 응답 데이터 가로채는 속성
+				console.log(resData,typeof(resData));
+				console.log(resData.name,typeof(resData));
+		
+				console.log("가공 직후***");
+				resData = JSON.parse(resData);
+				console.log(resData.name,typeof(resData));
+				/* div tag에 데이터 또는 html 구조 자체를 출력하는 속성
+					innerText - 순수 문자열, html 형식도 문자열로 간주
+					innerHTML - html 형식의 문자열을 html tag로 처리*/
+
+				dataView.innerText = resData.name;
+			}//end of if
+		}	//end of onready
+		xhttp.open("POST","fisa"); //post방식
+		xhttp.send();
+	});
+</script>
+</body>
+</html>
