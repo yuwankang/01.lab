@@ -1,45 +1,65 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.3.2'
-	id 'io.spring.dependency-management' version '1.1.6'
+    id 'java'
+    id 'org.springframework.boot' version '3.3.2'
+    id 'io.spring.dependency-management' version '1.1.6'
+    id 'war' // WAR 파일 빌드를 위한 플러그인
 }
 
 group = 'fisa3'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
-	}
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
 
 configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	//jsp 사용을 위한 추가 설정
-	// https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
-	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
-	// https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api
-	compileOnly 'jakarta.servlet:jakarta.servlet-api'
-	// https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api
-	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
+    // Spring Boot Starter Web: 웹 애플리케이션 개발을 위한 기본 의존성
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // JDBC Starter: JDBC를 사용하기 위한 기본 의존성
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    // Oracle JDBC 드라이버
+    runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+
+    // JSP를 사용하기 위한 설정
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.11'
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:2.0.0'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:5.0.0'
+
+    // Lombok: 컴파일 타임에 자동으로 getter, setter 생성
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // 개발 중에 유용한 Spring Boot DevTools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // 테스트 의존성
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+war {
+    archiveFileName = 'step12_review.war'
+    from 'src/main/webapp'
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
+}
+
+springBoot {
+    mainClass.set('com.example.GuestBookApplication') // 애플리케이션 메인 클래스 설정
 }
