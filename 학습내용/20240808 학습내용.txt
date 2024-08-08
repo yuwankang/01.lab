@@ -8,4 +8,43 @@
 jre 
 linux tomcat 설치 : servlet & jsp 앱 배포(war)
 non-tomcat 설치 : spring boot 배포(내장서버) jar
-        - 
+
+1. gradle 프로젝트에 익숙해지기
+    - build.gradle 파일의 설정 내용
+        1. 의존 library 셋팅
+        2. 설정 후 refresh 필수
+2. jsp 사용을 위한 추가 설정
+    1. build.gradle
+	    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	    compileOnly 'jakarta.servlet:jakarta.servlet-api'
+	    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'\
+    2. jsp 개발 위치
+        1. 자동 생성된 폴더(Spring.io에서 제시)
+            resource/static/*.html
+                - 순수 html/css/javascript./이미지/영상..
+            resource/templates
+                - spring 자체의 tag(타입립)
+                    - tomcat에서 thyleaf 코드는 실행
+                    - html등은 브라우저에게 문자열로 응답
+                - *.html
+        2. 직접 jsp 저장 위치 생성 및 위치를 설정 파일에 등록
+            - servlet&jsp 
+                : WEB-INF하위엔 절대 개발 불가
+                    - 서버만의 설정 경로
+                    - 컴파일된 byte code & web.xml & lib
+            - Spring Framwork
+                : 보안 강화
+                : WEB-INF 폴더 하위에 jsp 개발 허용
+                    - 위치는 spring 설정 파일에 등록
+            - js기반의 Framwork와 thyleaf 부각되는 시점 도래
+                : jsp 사용 자제
+                - spring boot는 jsp 미고려
+                    : 필요시 해결점 - 사용자들이 환경 구축
+            
+            - Spring boot
+                src/main/java
+                src/main/webapp 폴더 생성
+                                /WEN-INF
+                                    - /jsp 개발
+                                    - 반드시 jsp 위치를 설정 파일에 등록
+                                    - 
