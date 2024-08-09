@@ -48,7 +48,7 @@ public class DataSourceManager {
 	
 	static {
 		ds.setDriverClassName("oracle.jdbc.OracleDriver");
-		ds.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
+		ds.setUrl("jdbc:oracle:thin:@localhost:1521/xe");
 		ds.setUsername("scott");
 		ds.setPassword("tiger");  
 	}
