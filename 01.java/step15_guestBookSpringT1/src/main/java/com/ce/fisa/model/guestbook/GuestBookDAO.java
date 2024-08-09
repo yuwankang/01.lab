@@ -1,4 +1,4 @@
-package model.guestbook;
+package com.ce.fisa.model.guestbook;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -82,7 +82,7 @@ public class GuestBookDAO {
 			}
 		}catch (SQLException e){
 			e.printStackTrace();
-			throw e;
+			throw new SQLException("해당 개시글 검색시 이슈 발생, 잠시후 재요청 해 주세요");
 		}finally{
 			DataSourceManager.close(conn, pstmt, rset);
 		}
@@ -176,6 +176,7 @@ public class GuestBookDAO {
 		}finally{
 			DataSourceManager.close(conn, pstmt, rset);
 		}
+		System.out.println("--- " + list);
 		return list;
 	}
 	

@@ -6,7 +6,7 @@
  * 		- 도메인Bean.java / 도메인VO.java / 도메인DTO.java/ 도메인.java
  */
 
-package model.guestbook;
+package com.ce.fisa.model.guestbook;
 
 
 import java.io.Serializable;

@@ -1,26 +1,31 @@
-package controller;
+package com.ce.fisa.model;
 
-import com.example.demo.service.ActionService;
-import com.example.demo.service.ActionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import java.io.IOException;
 
-@Controller
-@RequestMapping("/board")
-public class BoardController {
+import controller.action.Action;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-    @Autowired
-    private ActionFactory actionFactory;
-
-    @GetMapping
-    public ModelAndView handleRequest(@RequestParam(name = "command", defaultValue = "list") String command,
-                                      @RequestParam(name = "num", required = false) Integer num,
-                                      @RequestParam(name = "password", required = false) String password) {
-        Action action = actionFactory.getAction(command);
-        return action.execute(num, password);
-    }
+//board?command=list
+@WebServlet("/board")
+public class BoardController extends HttpServlet {
+	
+	//board?command=write&....
+	//board?command=list : 모든 게시글 보기 요청
+	//board?command=view&num=2 : 해당 게시글 하나만 보기 요청 
+	//board?command=updateForm : 하나의 게시글 update
+	//board?command=delete&password=값 : read.jsp에서 이미 보고 있는 하나의 게시글 삭제 요청
+	//board?command=update
+	//board?command=view&num=" + num
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		
+		String command = request.getParameter("command");//list
+		if(command == null) {
+			command = "list";   //모든 방명록 보기
+		}
+	}	
 }

@@ -1,4 +1,4 @@
-package model.guestbook;
+package com.ce.fisa.model.guestbook;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -176,6 +176,7 @@ public class GuestBookDAO {
 		}finally{
 			DataSourceManager.close(conn, pstmt, rset);
 		}
+		System.out.println("--- " + list);
 		return list;
 	}
 	

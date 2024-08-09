@@ -38,6 +38,16 @@ dependencies {
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.11'
     implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:2.0.0'
     compileOnly 'jakarta.servlet:jakarta.servlet-api:5.0.0'
+    
+    
+//jsp 사용을 위한 추가 설정
+implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	
+implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+
+implementation 'jakarta.servlet:jakarta.servlet-api' //스프링부트 3.0 이상
+implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api' //스프링부트 3.0 이상
+implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl' //스프링부트 3.0 이상
 
     // Lombok: 컴파일 타임에 자동으로 getter, setter 생성
     compileOnly 'org.projectlombok:lombok'
