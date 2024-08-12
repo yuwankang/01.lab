@@ -7,12 +7,29 @@ Spring 기술 문서 https://docs.spring.io/spring-boot/reference/features/aop.h
 
 -------------------------------------------------------------------------------------------
 . : 디렉터리, 현 디렉터리 의미 url
-.. : 상위 디렉터리, url 상대경로 ㅛ현
+.. : 상위 디렉터리, url 상대경로 표현
     현 위치에서 상위 위치로 이동
     Spring aop에서 
 
 학습내용
 Spring AOP
+- 용어
+    자바 beans = DTO = VO
+        : 멤버, 기본생성자, parameter 생성자, get/setXxx
+
+    스프링빈
+        : 스프링 framework가 생성, lifecycle, 소멸을 관리하는 모든 구조의 객체
+        :예시 -  controller
+        : 개발자 코드는 타입 변수 선언 및 애노테이션 조합
+            - 실제 생성 및 관리는 spring framework가 진행
+    
+    컴포넌트
+        : 재사용성이 있는 개체(객체 또는 자원들 포괄적으로 의미)
+            : cp기법으로 context.xml web 구조에서 생성시
+                java 소스상에서 server의 설정 파일 read시 별칭으로 자원 획득
+                java:comp/env
+
+
 - 관점지향프로그래밍
     : OOP에게 add 되면서 개발품질 향상
     : AOP는 OOP기반의 구조에 적용 권장
@@ -25,6 +42,7 @@ Spring AOP
             - 위빙 : 메소드의 실제 실행 시점에 공통 기능을 적용
         - 추가 설정 library
             biz구현(spring) + 공통로직구현 및 설정(aspectj&spring) + 동적 byte code 생성 library(CGLib)
+
 
 1. 장점
     - 중복 코드를 최소화
@@ -60,3 +78,36 @@ Spring AOP
 
         - 적용시키는 공통 기능의 메소드 필요
     5단계 - 서비스 실행
+
+4단계 - 개발 설계
+    1. biz 클래스
+        Car.java
+    2. 공통 클래스
+        InfoMessage.java
+            - 차 관련 공통 로직만 보유한 클래스
+    3. controller
+        - RestAPI 기준
+    4. main 메소드 기반의 springboot 클래스
+        - AOP 애노테이션 추가
+
+*******
+AOP 주요 api
+
+1. @Aspect
+    - 공통 기능으로만 구현된 클래스 선언구에 선언 필수
+    - 추가로 코드상에 변수 선언등 불필요
+
+2. @Before
+    - biz메소드가 호출된 직후 biz메소드 실행전 실행
+    - 전처리용
+
+3. @After
+    - biz메소드 실행후 실행
+    - 후처리용
+
+4. @AfterReturning
+	- https://docs.spring.io/spring-framework/reference/core/aop/ataspectj/advice.html#aop-advice-before
+
+1. step16단계의 출력 메세지를 로그로 처리
+System.out.println() -> info 레벨의 로그로 처리
+파일로 떨구기
