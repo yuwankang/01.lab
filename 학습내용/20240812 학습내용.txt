@@ -1,0 +1,62 @@
+AOP
+- 로그 기록 작성 적용
+
+SpringDataJPA - JPA -> SpringDataJPA -oracle
+
+Spring 기술 문서 https://docs.spring.io/spring-boot/reference/features/aop.html#page-title
+
+-------------------------------------------------------------------------------------------
+. : 디렉터리, 현 디렉터리 의미 url
+.. : 상위 디렉터리, url 상대경로 ㅛ현
+    현 위치에서 상위 위치로 이동
+    Spring aop에서 
+
+학습내용
+Spring AOP
+- 관점지향프로그래밍
+    : OOP에게 add 되면서 개발품질 향상
+    : AOP는 OOP기반의 구조에 적용 권장
+    : 근본 framework - AspectJ
+    : Spring에서 참조 및 활용
+        - spring 개발 환경에서 aspectj library 설정
+        - aspectj 표현법으로 targer, 시점등 설정
+            - https://docs.spring.io/spring-framework/reference/core/aop/ataspectj/pointcuts.html
+        - spring에선 aspectj의 기능을 메소드에만 적용
+            - 위빙 : 메소드의 실제 실행 시점에 공통 기능을 적용
+        - 추가 설정 library
+            biz구현(spring) + 공통로직구현 및 설정(aspectj&spring) + 동적 byte code 생성 library(CGLib)
+
+1. 장점
+    - 중복 코드를 최소화
+    - 로그기록 등은 필수로 해야 할 경우 실제 코드에 코딩 없이 설정만으로 적절한 시점에 자동 적용
+
+2. 예
+    public void biz(){
+        공통 전처리
+        비즈로직
+        공통 후 처리
+    }
+
+    -> AOP
+    public void biz(){
+        비즈로직
+    }
+    전처리, 후처리 코드는 철저하게 biz로직의 코드상에서 분리
+
+3. 개발 단계
+    1단계. library 세팅
+    2단계. 공통로직 전처리, 후처리만 구현된 별도의 클래스 개발
+        - 공통 클래스
+        - Aspect라고도 함
+    3단계. biz로직 순수 개발
+    4단계. 공통기능에 어떤 biz에 어떤 시점에 전처리? 후처리? 할 것인가 설정
+        - target
+            - 적용받는 biz 메소드
+        - 시점 : biz target 대상의 시점
+            - 전?
+            - 후?
+            - 리턴?
+            - 예외?
+
+        - 적용시키는 공통 기능의 메소드 필요
+    5단계 - 서비스 실행
