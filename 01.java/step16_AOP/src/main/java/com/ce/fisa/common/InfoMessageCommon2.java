@@ -40,3 +40,10 @@ public class InfoMessageCommon2 {
         return bizReturnValue;
     }
 }
+
+
+
+
+
+
+

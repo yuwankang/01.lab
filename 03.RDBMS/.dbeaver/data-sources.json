@@ -75,7 +75,7 @@
 						"save-password": true,
 						"properties": {
 							"host": "127.0.0.1",
-							"port": 22,
+							"port": 22.0,
 							"authType": "PASSWORD",
 							"implementation": "sshj",
 							"shareTunnels": true,

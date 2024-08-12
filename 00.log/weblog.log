@@ -1,21 +1,8 @@
-2024-08-05 10:50:05 INFO  FirstServlet:20 - FirstServlet info() ***
-2024-08-05 10:50:05 WARN  FirstServlet:21 - FirstServlet warn() ***
-2024-08-05 10:50:05 ERROR FirstServlet:22 - FirstServlet error() ***
-2024-08-05 10:50:05 INFO  FirstServlet:28 - FirstServlet doGet info() ***
-2024-08-05 10:50:05 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
-2024-08-05 10:50:05 ERROR FirstServlet:30 - FirstServlet doGet error() ***
-2024-08-05 10:50:10 INFO  FirstServlet:28 - FirstServlet doGet info() ***
-2024-08-05 10:50:10 WARN  FirstServlet:29 - FirstServlet doGet warn() ***
-2024-08-05 10:50:10 ERROR FirstServlet:30 - FirstServlet doGet error() ***
-2024-08-05 15:31:17 INFO  FirstServlet:21 - FirstServlet info() ***
-2024-08-05 15:31:17 WARN  FirstServlet:22 - FirstServlet warn() ***
-2024-08-05 15:31:17 ERROR FirstServlet:23 - FirstServlet error() ***
-2024-08-05 15:31:17 INFO  FirstServlet:29 - FirstServlet doGet info() ***
-2024-08-05 15:31:17 WARN  FirstServlet:30 - FirstServlet doGet warn() ***
-2024-08-05 15:31:17 ERROR FirstServlet:31 - FirstServlet doGet error() ***
-2024-08-05 17:40:28 INFO  FirstServlet:21 - FirstServlet info() ***
-2024-08-05 17:40:28 WARN  FirstServlet:22 - FirstServlet warn() ***
-2024-08-05 17:40:28 ERROR FirstServlet:23 - FirstServlet error() ***
-2024-08-05 17:40:28 INFO  FirstServlet:29 - FirstServlet doGet info() ***
-2024-08-05 17:40:28 WARN  FirstServlet:30 - FirstServlet doGet warn() ***
-2024-08-05 17:40:28 ERROR FirstServlet:31 - FirstServlet doGet error() ***
+2024-08-12 18:51:37 INFO  CarController:25 - m1() ---
+2024-08-12 18:51:39 INFO  CarController:25 - m1() ---
+2024-08-12 18:57:50 INFO  CarController:25 - m1() ---
+2024-08-12 18:57:50 INFO  CarController:30 - controller에서 리턴받은 데이터 리턴 데이터🎉🎉🎉
+2024-08-12 18:57:51 INFO  CarController:25 - m1() ---
+2024-08-12 18:57:51 INFO  CarController:30 - controller에서 리턴받은 데이터 리턴 데이터🎉🎉🎉
+2024-08-12 19:02:15 INFO  CarController:25 - m1() ---
+2024-08-12 19:02:15 INFO  CarController:30 - controller에서 리턴받은 데이터 리턴 데이터🎉🎉🎉

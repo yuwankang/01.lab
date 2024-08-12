@@ -1,5 +1,6 @@
 package com.ce.fisa.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,23 +10,25 @@ import com.ce.fisa.biz.Car;
 
 @RestController
 public class CarController {
-	
+	Logger logger = Logger.getLogger(getClass());
+
 	/*
-	 *  @Component
-	 *  public calss Car{}
-	 * 
+	 *  @Component   
+		public class Car {
 	 */
-	@Autowired //타입과 일치되는 스프링빈을 자동 주입
+	@Autowired  //타입과 일치되는 스프링빈을 자동 주입
 	private Car car;
 	
+	//rest get
 	@GetMapping("aop1")
 	public String m1() throws Exception {
-		System.out.println("m1() ---");
+		logger.info("m1() ---");
 		car.buy();
-		System.out.println("****************");
+		System.out.println("***********");
 		
 		String data = car.buyReturn();
-		System.out.println("controler에서 리턴받은 데이터 "+data);
+		logger.info("controller에서 리턴받은 데이터 " + data);
+		
 		return "m1() 응답";
 	}
 	

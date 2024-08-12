@@ -111,3 +111,51 @@ AOP 주요 api
 1. step16단계의 출력 메세지를 로그로 처리
 System.out.println() -> info 레벨의 로그로 처리
 파일로 떨구기
+
+프로젝트 개발 설계
+1. Spring boot
+    - web 
+    - spring data JPA
+2. 개발 설계
+    -DTO
+    -entity
+        dto 와 entity는 분리
+        값 자동 매핑하는 API - ModelMapper
+            : dto와 entity 자동 복제
+              개발자가 변환시키는 코드는 어디에?
+    - Respository
+        - DAO
+        
+    - Service
+        - interface
+        - interface 구현하는 하위 클래스
+    - controller
+    - View - html/jsp
+    -------------
+
+SpringDataJPA 학습
+기술 문서 - https://docs.spring.io/spring-data/jpa/docs/2.7.7/reference/html/#jpa.query-methods.query-creation
+1. 구조
+    jpa > SpringDataJPA
+
+2. 주의사항
+    1. entity명에 대소문자 혼용시 자동생성되는 table명
+    예 :
+     - entity class명 -        : - 생성되는 table명 -
+
+     EmpCopy.java                   emp_copy
+     Empcopy.java                   empcopy
+
+     - entity 멤버변수명 -      : - 생성되는 table의 컬럼명 -
+     eName                          e_name
+     empNo                          emp_no
+
+     2. 자동적용되는 명명규칙 반영이 아닌 명시적인 설정
+        @Table(name="명시적인 table명")
+            - class 선언구
+        @Column(name="명시적인 컬러명")
+            - 멤버 변수 선언구 
+    3. Respository 개발시 주의 사항
+        1. DML 작성시
+        2. @Transactional - Service에서 주로 작업
+           @Query 설정시 @Modifying

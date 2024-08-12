@@ -4,7 +4,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.6'
 }
 
-group = 'fisa3'
+group = 'fisa'
 version = '0.0.1-SNAPSHOT'
 
 java {
@@ -25,18 +25,25 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-aop'
-    implementation 'org.springframework.boot:spring-boot-starter-log4j2' // Ensure using Log4j2
-    runtimeOnly 'org.aspectj:aspectjweaver:1.9.9.1'
-    implementation 'cglib:cglib:3.3.0'
     compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    // Ensure SLF4J and Log4j2 dependencies are correct
-    // Avoid including both SLF4J and Log4j2 dependencies
+    // Spring AOP
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+    // AspectJ Weaver
+    runtimeOnly 'org.aspectj:aspectjweaver:1.9.9.1'
+
+    // CGLIB for dynamic byte code generation
+    implementation 'cglib:cglib:3.3.0'
+    
+
+    
+    // Log4j 2 dependencies
+ 	implementation 'log4j:log4j:1.2.17'
 }
 
 tasks.named('test') {

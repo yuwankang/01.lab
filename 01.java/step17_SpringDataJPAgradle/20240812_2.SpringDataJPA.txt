@@ -1,0 +1,43 @@
+SpringDataJPA학습
+
+- jpql 참조 page
+https://docs.spring.io/spring-data/jpa/docs/2.7.7/reference/html/#jpa.query-methods
+
+1. 구조
+	jpa > SpringDataJPA
+
+2. 주의사항
+	1. entity명에 대소문자 혼용시 자동 생성되는 table명
+		- 최적화된 명명규칙 자동 반영 
+		
+		예:
+		- entity class명 - 		: - 생성되는 table명 -	
+		EmpCopy.java			 	emp_copy
+		Empcopy.java				empcopy 			
+	
+	
+		- entity 멤버변수명 - 		: - 생성되는 table의 컬럼명 -	
+		eName						e_name
+		empNo						emp_no
+
+	2. 자동 적용되는 명명규칙 반영이 아닌 명시적인 설정
+		@Table(name="명시적인 table명")
+			- class 선언구
+		@Column(name="명시적인 컬럼명")
+			- 멤버 변수 선언구
+
+	3. repository 개발시 주의 사항
+		1. DML 작성시 필수
+		2. @Transactional - service에서 주로 작업
+		   @Query 설정시 - Repository에 @Modifying 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,100 @@
+* Spring AOP
+- 용어
+	자바beans = DTO = VO 
+		: 멤버, 기본생성자, parameter생성자, get/setXxx
+		
+	스프링빈
+		: 스프링 fraemwork이 생성, lifecycle, 소멸을 관리하는 모든 구조의 객체
+		: 예시 - controller
+		: 개발자 코드는 타입 변수 선언 및 애노테이션 조합
+			- 실제 생성 및 관리는 spring framework이 진행 
+	
+	컴포넌트
+		: 재사용성이 있는 개체(객체 또는 자원들 포괄적으로 의미)
+			: cp기법으로 context.xml  web 구조에서 생성시
+				java 소스상에서 server의 설정 파일 read시 별칭으로 자원 획득
+				java:comp/env 표현법으로 검색(lookup)
+				
+	
+- 관점지향프로그래밍
+	: OOP에게 add 되면서 개발품질 향상
+	: AOP는 OOP기반의 구조에 적용 권장
+	: 근본 framework - AspectJ 
+	: Spring에서 참조 및 활용
+		- spring  개발 환경상에 aspectj library 설정
+		- aspectj 표현법으로 target, 시점등 설정
+			- https://docs.spring.io/spring-framework/reference/core/aop/ataspectj/pointcuts.html#aop-pointcuts-examples
+		
+		- spring에선 aspectj의 기능을 메소드에만 적용
+			- 위빙 : 메소드에 실제 실행 시점에 공통 기능을 적용
+		- 추가 설정 library
+			biz구현(spring) + 공통로직구현 및 설정(aspectj&spring)
+			 + 동적 byte code생성 library(CGLib)
+
+* Spring framework
+
+1. 장점
+	- 중복 코드를 최대치로 최소화(제거)
+		: biz 코드에서 분리
+	- 로그기록 등은 필수로 해야 할 경우 실제 코드에 코딩 없이
+	  설정만으로 적절한 시점에 자동 적용
+	  
+	  
+2. 예
+	public void biz(){
+		공통 전처리
+		비즈로직
+		공통 후처리
+	}
+	
+	-> AOP
+	public void biz(){
+		비즈로직
+	}
+	전처리, 후처리 코드는 철저하게 biz로직의 코드상에서 분리
+	
+	
+3. 개발 단계
+	1단계. library 셋팅
+	2단계. 공통 로직 전처리, 후처리만 구현된 별도의 클래스 개발
+			- 공통 클래스
+			- Aspect라고도 함 
+	3단계. biz로직 순수 개발
+	4단계. 공통기능에 어떤 biz에 어떤 시점에 전처리? 후처리?.. 할 것인가를 설정
+		- target
+			- 적용받는 biz 메소드 
+		- 시점 : biz target 대상의 시점 
+			- 전?
+			- 후?
+			- 리턴?
+			- 예외?
+		- 적용시키는 공통 기능의 메소드
+	5단계 - 서비스 실행 
+	
+4단계 - 개발 설계
+	1. biz 클래스
+		Car.java
+	2. 공통 클래스
+		InfoMessage.java 
+		- 차 관련 공통 로직만 보유한 클래스 
+	3. contoller
+		- RestAPI 기준
+	4. main메소드 기반의 springboot 시작 클래스 
+		- AOP 애노테이션 추가
+		
+******
+AOP  주요 api
+
+1. @Aspect
+	- 공통 기능으로만 구현된 클래스 선언구에 선언 필수
+	- 추가로 코드상에 변수 선언등 불필요
+2. @Before
+	- biz메소드가 호출된 직후 biz메소드 실행전 실행
+	- 전처리용
+3. @After
+	- biz메소드 실행후 실행
+	- 후처리용
+4. @AfterReturing
+	- https://docs.spring.io/spring-framework/reference/core/aop/ataspectj/advice.html#aop-advice-after-returning
+	
+						
