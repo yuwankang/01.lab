@@ -41,7 +41,6 @@ dependencies {
     implementation 'cglib:cglib:3.3.0'
     
 
-    
     // Log4j 2 dependencies
  	implementation 'log4j:log4j:1.2.17'
 }

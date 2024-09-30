@@ -10,10 +10,16 @@
 				"host": "localhost",
 				"port": "3306",
 				"url": "jdbc:mysql://localhost:3306/",
-				"configurationType": "MANUAL",
+				"configurationType": "URL",
 				"home": "mysql_client",
 				"type": "dev",
 				"closeIdleConnection": true,
+				"properties": {
+					"connectTimeout": "20000",
+					"rewriteBatchedStatements": "true",
+					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2,TLSv1.3",
+					"allowPublicKeyRetrieval": "true"
+				},
 				"auth-model": "native",
 				"handlers": {
 					"ssh_tunnel": {
@@ -104,6 +110,51 @@
 					"@dbeaver-sid-service@": "SERVICE"
 				},
 				"auth-model": "oracle_native"
+			}
+		},
+		"mysql8-191493a39ab-37b80891d373dc53": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "village",
+			"save-password": true,
+			"configuration": {
+				"host": "z69201abd9084a8bca5d009740a8d17dc.apppaas.app",
+				"port": "30026",
+				"database": "village",
+				"url": "jdbc:mysql://z69201abd9084a8bca5d009740a8d17dc.apppaas.app:30026/",
+				"configurationType": "URL",
+				"home": "mysql_client",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"properties": {
+					"connectTimeout": "20000",
+					"rewriteBatchedStatements": "true",
+					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2,TLSv1.3",
+					"allowPublicKeyRetrieval": "false"
+				},
+				"auth-model": "native"
+			}
+		},
+		"mysql8-1922b8f14a5-64423ee95d8cb5c2": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "localhost",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"url": "jdbc:mysql://localhost:3306/",
+				"configurationType": "MANUAL",
+				"home": "mysql_client",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"properties": {
+					"connectTimeout": "20000",
+					"rewriteBatchedStatements": "true",
+					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2,TLSv1.3",
+					"allowPublicKeyRetrieval": "true"
+				},
+				"auth-model": "native"
 			}
 		}
 	},
